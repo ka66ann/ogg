@@ -20,6 +20,6 @@ export async function getScreenshot(html, type, isDev) {
 
    // console.log(html)
    // await page.setContent(html);
-    const file = await page.screenshot({ encoding: "base64", fullPage: true })
+    const file = await page.screenshot({ type });
     return file;
 }
