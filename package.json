@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "su": "surge publish ./static --domain https://o666.surge.sh",
+    "u": "npx ncu -u && npm update -f",
+    "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f"
+  },
+  "dependencies": {
+    "chrome-aws-lambda": "7.0.0",
+    "marked": "2.0.0",
+    "puppeteer-core": "7.0.0",
+    "twemoji": "13.0.1"
+  }
+}
