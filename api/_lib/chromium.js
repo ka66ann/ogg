@@ -13,10 +13,13 @@ async function getPage(isDev) {
 export async function getScreenshot(html, type, isDev) {
     const page = await getPage(isDev);
     await page.setViewport({ width: 2048, height: 1170 });
+    await page.goto("https://danube-webshop.herokuapp.com", {
+      waitUntil: "networkidle2",
+    })
 
 
-    console.log(html)
-    await page.setContent(html);
-    const file = await page.screenshot({ type });
+   // console.log(html)
+   // await page.setContent(html);
+    const file = await page.screenshot({ encoding: "base64", fullPage: true })
     return file;
 }
